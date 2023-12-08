@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Please Tell Me</title>
+</head>
+<body>
+<h1>What should I do tonight?</h1>
+<button id= "ask">Tell me, please!</button>
+<p id= "answer"></p>
+<script>
+//object with activities and sub-activities
+const activities = {
+    "Whatch a movie": {
+        service: ['Netflix', 'Prime Video', 'Disney+'],
+        titles: ['Pulp Fiction', 'The Godfather', 'Inception', 'Interstellar', 'Kill Bill', 'Bigfish']
+    },
+    "Play a videogame": {
+        service: ['PC', 'PlayStation', 'Xbox'],
+        titles: ['Red Dead Redemption 2', 'Fortnite', 'The Legend of Zelda: Breath of the Wild', 'Call of Duty', 'Genshin Impact']
+    },
+    "Call a friend": {
+        service: ['Phone', 'Skype', 'Discord'],
+        titles: ['John', 'Thomas', 'Paul', 'Jude', 'Glenn', 'Polly']
+    }
+};
+
+function casualAnswer() {
+    //call activity
+    let randActivity = activities[Object.keys(activities)[Math.floor(Math.random() * Object.keys(activities).length)]];
+    //call service
+    let randService = randActivity.service[Math.floor(Math.random() * randActivity.service.length)];
+    //call titles
+    let randTitle = randActivity.titles[Math.floor(Math.random() * randActivity.titles.length)];
+
+    //creation random message
+    return `Tonight you should ${randActivity} on ${randService}: ${randTitle}.`
+};
+
+const askQuest = document.getElementById("ask");
+const ansRand = document.getElementById("answer");
+askQuest.addEventListener("click", function() {
+    let randMessage = casualAnswer();
+    ansRand.textContent = randMessage;
+});
+console.log(casualAnswer());
+
+</script>
+</body>
+</html>
