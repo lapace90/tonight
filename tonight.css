@@ -1,0 +1,22 @@
+body {
+    background-color: cadetblue;
+    text-align: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+button {
+    padding: 8px;
+    font-size: 1.8rem;
+    background-color: deeppink;
+    border-radius: 8px;
+    color: whitesmoke;
+}
+
+#answer {
+    font-size: 2rem;
+}
