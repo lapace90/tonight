@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Please Tell Me</title>
+    <link rel="stylesheet" href="./tonight.css">
 </head>
 <body>
 <h1>What should I do tonight?</h1>
@@ -11,40 +12,41 @@
 
 <script>
 //object with activities and sub-activities
-const activities = {
-    "Whatch a movie": {
+const activities = 
+    {
+       "Whatch a movie": {
         service: ['Netflix', 'Prime Video', 'Disney+'],
-        titles: ['Pulp Fiction', 'The Godfather', 'Inception', 'Interstellar', 'Kill Bill', 'Bigfish']
+        titles: ['Pulp Fiction', 'The Godfather', 'Inception', 'Interstellar', 'Kill Bill', 'Bigfish', 'Eternal Sunshin of the Spotless Mind']
     },
-    "Play a videogame": {
+       "Play a videogame": {
         service: ['PC', 'PlayStation', 'Xbox'],
-        titles: ['Red Dead Redemption 2', 'Fortnite', 'The Legend of Zelda: Breath of the Wild', 'Call of Duty', 'Genshin Impact']
+        titles: ['Red Dead Redemption 2', 'Fortnite', 'The Legend of Zelda: Breath of the Wild', 'Call of Duty', 'Genshin Impact', 'Subnautica']
     },
-    "Call a friend": {
+        "Call a friend": {
         service: ['Phone', 'Skype', 'Discord'],
-        titles: ['John', 'Thomas', 'Paul', 'Jude', 'Glenn', 'Polly']
+        titles: ['John', 'Alex', 'Thomas', 'Paul', 'Jude', 'Glenn', 'Polly']
     }
 };
 
 function casualAnswer() {
     //call activity
-    let randActivity = activities[Object.keys(activities)[Math.floor(Math.random() * Object.keys(activities).length)]];
+    let selectActivity = Object.keys(activities)[Math.floor(Math.random() * Object.keys(activities).length)];
+    let randActivity = activities[selectActivity];
     //call service
     let randService = randActivity.service[Math.floor(Math.random() * randActivity.service.length)];
     //call titles
     let randTitle = randActivity.titles[Math.floor(Math.random() * randActivity.titles.length)];
 
     //creation random message
-    return `Tonight you should ${randActivity} on ${randService}: ${randTitle}.`
+    return `Tonight you should ${selectActivity} on ${randService}: ${randTitle}.`
 };
-
+//show message
 const askQuest = document.getElementById("ask");
 const ansRand = document.getElementById("answer");
 askQuest.addEventListener("click", function() {
     let randMessage = casualAnswer();
     ansRand.textContent = randMessage;
 });
-console.log(casualAnswer());
 
 </script>
 </body>

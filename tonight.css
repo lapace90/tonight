@@ -1,8 +1,9 @@
 body {
     background-color: cadetblue;
     text-align: center;
-    justify-content: center;
+    display: block;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10rem;
 }
 
 h1 {
@@ -19,4 +20,6 @@ button {
 
 #answer {
     font-size: 2rem;
+    background-color: bisque;
+    padding: 5px;
 }
